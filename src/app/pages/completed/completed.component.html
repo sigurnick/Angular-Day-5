@@ -1,0 +1,27 @@
+
+<div id="todo-page">
+
+ <!-- -------Todos -->
+ <h2>Todo Completati</h2>
+
+ <div  *ngIf="!todosCompleted.length && todoValue != false">
+   <h3 class="spinner"></h3>
+ </div>
+
+ <!-- se non ci sono promemoria mostra questo -->
+ <div *ngIf="todoValue === false">
+  <h3>Nessun promeriora completato</h3>
+</div>
+ <div>
+
+  <div *ngFor="let todo of todosCompleted" class="todo todo-completed">
+
+
+      <h3>{{todo.title}}</h3>
+    <span class=" todo-box" (click)="deleteTask(todo)"><i class="fa-solid fa-trash"></i></span>
+
+
+  </div>
+
+ </div>
+</div>

@@ -1,0 +1,68 @@
+<div id="todo-page">
+  <!-- -------Todos -->
+
+  <div *ngIf="!todos.length && todoValue != false">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="todo-list" *ngIf="todos.length > 0">
+    <!-- todo non completati -->
+
+    <h2>Todo</h2>
+    <div *ngFor="let todo of todosUncomplited" class="todo">
+      <h3>{{ todo.title }}</h3>
+      <span class="todo-box" (click)="changeStatus(todo)"
+        ><i class="fa-regular fa-square"></i
+      ></span>
+    </div>
+
+
+    <hr />
+
+    <!-- todo completati -->
+    <h2>Todo completati</h2>
+    <div *ngFor="let todo of todosCompleted" class="todo todo-completed">
+      <h3>{{ todo.title }}</h3>
+      <span class="todo-box" (click)="changeStatus(todo)"
+        ><i class="fa-solid fa-square-check"></i
+      ></span>
+    </div>
+  </div>
+
+  <!-- se non ci sono promemoria mostra questo -->
+  <div *ngIf="todoValue === false">
+    <h3>Nessun promeriora da completare</h3>
+  </div>
+
+  <!-- -------Inserimento -->
+  <form>
+    <input
+      type="text"
+      name="todo-title"
+      required
+      placeholder="Inserisci task"
+      [(ngModel)]="newTodo.title"
+    />
+
+    <button id="send-button" (click)="createTodo()">
+      <i class="fa-regular fa-square-plus"></i>
+    </button>
+  </form>
+</div>
+
+<!-- ----Istruzioni -->
+<div id="istruzioni">
+  <h5>Istruzioni d'uso</h5>
+  <ul>
+    <li>Cliccando sul bottone vuoto dei todo li assegneremo come completati</li>
+    <li>
+      Al contrario cliccando sul bottone del todo completato lo renderemo da
+      completare
+    </li>
+    <li>Nel form possiamo aggiungere nuovi todo</li>
+    <li>
+      Mentre nella pagina Completed posssiamo definitivamente eliminare i todo
+      cliccando sull' icona cancella
+    </li>
+  </ul>
+</div>

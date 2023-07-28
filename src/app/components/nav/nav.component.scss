@@ -1,0 +1,25 @@
+
+ul{
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 40px;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+li{
+  list-style: none;
+  font-size: x-large;
+  font-weight: bold;
+  background-color: #f6f8e2;
+  padding: 10px;
+  border-radius: 12px;
+  color: #3c3d42;
+}
+
+
+.active{
+  color: #9ccd62 ;
+}

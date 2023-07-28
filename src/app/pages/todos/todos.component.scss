@@ -1,0 +1,39 @@
+#todo-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+
+  input {
+    height: 25px;
+    width: 200px;
+  }
+}
+
+#send-button {
+  background-color: #9ccd62;
+  color: white;
+  cursor: pointer;
+}
+
+#send-button i {
+  font-size: 2em;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+
+
+#istruzioni{
+  margin-top: 300px;
+  font-size: 0.9em;
+
+  h5{
+    text-align: center;
+  }
+}
